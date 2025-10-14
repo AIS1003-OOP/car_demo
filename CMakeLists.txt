@@ -16,4 +16,5 @@ FetchContent_MakeAvailable(threepp)
 
 add_executable(soc_demo main.cpp)
 target_link_libraries(soc_demo PUBLIC threepp::threepp)
+target_include_directories(soc_demo PUBLIC "include")
 
