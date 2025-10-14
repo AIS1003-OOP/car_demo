@@ -8,7 +8,9 @@
 // Not necessary the best implementation, but at least it is separated from the Car class
 class CarKeyController : public threepp::KeyListener {
 public:
-    CarKeyController(Car &car) : car(car) {
+    bool enabled{true};
+
+    explicit CarKeyController(Car &car) : car(car) {
     }
 
     void onKeyPressed(threepp::KeyEvent evt) override {
@@ -28,11 +30,13 @@ public:
     }
 
     void update(float dt) {
-        if (isWPressed) {
-            car.driveForward(dt);
-        }
-        if (isSPressed) {
-            car.driveBackward(dt);
+        if (enabled) {
+            if (isWPressed) {
+                car.driveForward(dt);
+            }
+            if (isSPressed) {
+                car.driveBackward(dt);
+            }
         }
     }
 

@@ -42,9 +42,9 @@ int main() {
     canvas.animate([&] {
         const float dt = clock.getDelta();
 
+        keyController.update(dt);
         carMesh->position = car.getPosition();
 
-        keyController.update(dt);
         renderer.render(scene, camera);
     });
 

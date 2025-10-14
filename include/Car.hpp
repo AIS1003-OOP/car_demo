@@ -6,7 +6,7 @@
 
 class Car {
 public:
-    Car(const threepp::Vector3 initialPos = {})
+    explicit Car(const threepp::Vector3 initialPos = {})
         : position_(initialPos) {
     }
 
