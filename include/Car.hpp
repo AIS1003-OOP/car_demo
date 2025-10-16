@@ -26,6 +26,10 @@ public:
         speed_ = speed;
     }
 
+    float getSpeed() const {
+        return speed_;
+    }
+
 private:
     float speed_ = 1;
     threepp::Vector3 position_;

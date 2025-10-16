@@ -13,6 +13,15 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(threepp)
 
+FetchContent_Declare(
+        catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v3.11.0
+)
+FetchContent_MakeAvailable(catch2)
+
+enable_testing()
+add_subdirectory(tests)
 
 add_executable(soc_demo main.cpp)
 target_link_libraries(soc_demo PUBLIC threepp::threepp)
